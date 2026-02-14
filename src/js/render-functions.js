@@ -41,10 +41,6 @@ export function createGallery(images) {
   gallery.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
-
-    gallery.insertAdjacentHTML(`beforeend`, markup);
-    lightbox.refresh();
-}
 export function hideLoader() {
     loader?.classList.add("is-hidden");
 }
