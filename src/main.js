@@ -18,6 +18,10 @@ function handleSubmit(event) {
     const query = event.currentTarget.elements['search-text'].value.trim();
     const inputValue = inputEl.value;
 
+     if (!query) {
+    iziToast.warning({ message: "Please enter a search query 🙂" });
+    return;
+  }
  clearGallery();
     showLoader();
 
@@ -34,7 +38,6 @@ function handleSubmit(event) {
            form.reset();
         })
         .catch(error => {
-            console.log("CATCH ERROR:", error);
             iziToast.error({
                 message: `Something went wrong 😢`
             });
